@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Ресторан "John's treat"</title>
+</head>
+<body>
+<table border="2">
+    <tr>
+        <th><p style="margin-left: 150px;">
+            <h3><a href="admin_panel">Главная</a></h3></th>
+        <th><p style="margin-left: 400px;">
+            <h3><a href="view_orders">База данных заказов</a></h3></th>
+        <th><p style="margin-left: 300px;">
+            <h3><a href="view_users">База данных пользователей</a></h3></th>
+        <th><p style="margin-left: 300px;">
+            <h3><a href="order_to_confirm">Подтверждение заказов</a></h3></th>
+        <th><p style="margin-left: 350px;">
+            <h3><a href="index">Выйти</a></h3></th>
+    </tr>
+</table>
+<b><p align="center" style="color:#9932cc; font-size:40px">Ресторан "John's treat"</p></b>
+<hr>
+<form action="#" th:action="@{/add_dish}" th:object="${dish}" method="post">
+    <p>Название блюда: <input type="text" th:field="*{name_dish}"/></p>
+    <p>Описание: <input type="text" th:field="*{description}"/></p>
+    <p>Категория: <input type="text" th:field="*{category}"/></p>
+    <p>Цена: <input type="text" th:field="*{price}"/></p>
+
+    <p><input type="submit" value="Создать"/> <input type="reset" value="Сбросить"/></p>
+</form>
+</body>
+</html>

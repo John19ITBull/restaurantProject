@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>Ресторан "John's treat"</title>
+</head>
+<body>
+<table border="2">
+    <tr>
+        <th><p style="margin-left: 250px;">
+            <h3><a href="index">Главная</a></h3></th>
+        <th><p style="margin-left: 500px;">
+            <h3><a href="menu_unreg">Меню</a></h3></th>
+        <th><p style="margin-left: 400px;">
+            <h3><a href="login">Войти</a></h3></th>
+        <th><p style="margin-left: 400px;">
+            <h3><a href="registration">Зарегистрироваться</a></h3></th>
+    </tr>
+</table>
+
+<b><p align="center" style="color:#9932cc; font-size:40px">Ресторан "John's treat"</p></b>
+<hr>
+
+<form action="#" th:action="@{/registration}" th:object="${user}" method="post">
+    <p>Имя: <input type="text" th:field="*{name}"/></p>
+    <p>Фамилия: <input type="text" th:field="*{surname}"/></p>
+    <p>Логин: <input type="text" th:field="*{username}"/></p>
+    <p>Пароль: <input type="text" th:field="*{password}"/></p>
+    <p>Номер телефона: <input type="text" th:field="*{phoneNumber}"/></p>
+    <p>Эл. почта: <input type="text" th:field="*{email}"/></p>
+
+    <p><input type="submit" value="Создать"/> <input type="reset" value="Сбросить"/></p>
+</form>
+
+</body>
+</html>

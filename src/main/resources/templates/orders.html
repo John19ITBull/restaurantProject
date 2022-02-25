@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>Ресторан "John's treat"</title>
+</head>
+<body>
+<table border="2">
+    <tr>
+        <th><p style="margin-left: 250px;">
+            <h3><a href="main">Главная</a></h3></th>
+        <th><p style="margin-left: 400px;">
+            <h3><a href="menu">Меню</a></h3></th>
+        <th><p style="margin-left: 300px;">
+            <h3><a href="orders">Заказы</a></h3></th>
+        <th><p style="margin-left: 300px;">
+            <h3><a href="basket">Корзина</a></h3></th>
+        <th><p style="margin-left: 300px;">
+            <h3><a href="index">Выйти</a></h3></th>
+    </tr>
+</table>
+
+<b><p align="center" style="color:#9932cc; font-size:40px">Ресторан "John's treat"</p></b>
+<hr>
+<table border="1" align="center" width="600" bgcolor="#f5f5dc">
+    <tr>
+        <th>ID</th>
+        <th><p style="margin-center: 250px;">Сумма</th>
+        <th><p style="margin-center: 250px;">Статус</th>
+        <th><p style="margin-center: 250px;">Функции</th>
+    </tr>
+
+    <tr th:each="order : ${orders}">
+        <td th:text="${order.id}"></td>
+        <td th:text="${order.amount}"></td>
+        <td th:text="${order.status}"></td>
+        <span th:if="${order.status.name == 'CONFIRMED'}">
+            <td>
+                <form th:action="@{/paidOrder}" method="get">
+                    <input type="hidden" th:name="orderId" th:value="${order.id}"/>
+                    <input type="submit" value="Оплатить"/>
+                </form>
+            </td>
+        </span>
+    </tr>
+
+</table>
+</body>
+</html>

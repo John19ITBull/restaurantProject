@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>Ресторан "John's treat"</title>
+</head>
+<body>
+<table border="2">
+    <tr>
+        <th><p style="margin-left: 250px;">
+            <h3><a href="index">Главная</a></h3></th>
+        <th><p style="margin-left: 500px;">
+            <h3><a href="menu_unreg">Меню</a></h3></th>
+        <th><p style="margin-left: 400px;">
+            <h3><a href="login">Войти</a></h3></th>
+        <th><p style="margin-left: 400px;">
+            <h3><a href="registration">Зарегистрироваться</a></h3></th>
+    </tr>
+</table>
+
+<b><p align="center" style="color:#9932cc; font-size:40px">Ресторан "John's treat"</p></b>
+<hr>
+
+<table border="1" align="center" width="600" bgcolor="#f5f5dc">
+    <tr>
+        <th>Название</th>
+        <th><p style="margin-center: 250px;">Описание</th>
+        <th><p style="margin-center: 250px;">Категория</th>
+        <th><p style="margin-center: 250px;">Цена, руб.</th>
+    </tr>
+
+    <tr th:each="dish : ${dishes}">
+        <td th:text="${dish.name}"></td>
+        <td th:text="${dish.description}"></td>
+        <td th:text="${dish.category}"></td>
+        <td th:text="${dish.price}"></td>
+    </tr>
+
+</table>
+</body>
+</html>

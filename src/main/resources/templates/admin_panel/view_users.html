@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>Ресторан "John's treat"</title>
+</head>
+<body>
+<table border="2">
+    <tr>
+        <th><p style="margin-left: 150px;">
+            <h3><a href="admin_panel">Главная</a></h3></th>
+        <th><p style="margin-left: 400px;">
+            <h3><a href="view_orders">База данных заказов</a></h3></th>
+        <th><p style="margin-left: 300px;">
+            <h3><a href="view_users">База данных пользователей</a></h3></th>
+        <th><p style="margin-left: 300px;">
+            <h3><a href="order_to_confirm">Подтверждение заказов</a></h3></th>
+        <th><p style="margin-left: 350px;">
+            <h3><a href="index">Выйти</a></h3></th>
+    </tr>
+</table>
+
+<b><p align="center" style="color:#9932cc; font-size:40px">Ресторан "John's treat"</p></b>
+<hr>
+
+<table border="1" align="center" width="600" bgcolor="#f5f5dc">
+    <tr>
+        <th><p style="margin-center: 250px;">ID</th>
+        <th><p style="margin-center: 250px;">User</th>
+        <th><p style="margin-center: 250px;">ROLE</th>
+        <th><p style="margin-center: 250px;">Balance, руб.</th>
+        <th><p style="margin-center: 250px;">Name</th>
+        <th><p style="margin-center: 250px;">Surname</th>
+        <th><p style="margin-center: 250px;">Phone number</th>
+        <th><p style="margin-center: 250px;">E-mail</th>
+    </tr>
+
+    <tr th:each="user : ${usersDTO}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.role}"></td>
+        <td th:text="${user.balance}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.surname}"></td>
+        <td th:text="${user.phoneNumber}"></td>
+        <td th:text="${user.email}"></td>
+
+    </tr>
+
+</table>
+
+</body>
+</html>
